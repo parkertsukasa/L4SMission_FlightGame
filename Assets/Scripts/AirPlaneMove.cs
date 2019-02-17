@@ -35,7 +35,7 @@ public class AirPlaneMove : MonoBehaviour
   private void RiseFall ()
   {
     float inputVert = Input.GetAxis ("Vertical");
-    transform.Rotate (Vector3.right * inputVert);
+    transform.Rotate (Vector3.right * inputVert * 2.0f);
   }
 
   /* -------------------- Hundle () --------------------
@@ -45,9 +45,9 @@ public class AirPlaneMove : MonoBehaviour
   {
     float inputHundle = Input.GetAxis ("Horizontal");
 
-    transform.Rotate (Vector3.up * inputHundle);
+    transform.Rotate (Vector3.up * inputHundle * 2.0f);
     Vector3 nowRot = transform.rotation.eulerAngles;
     Quaternion newRot = Quaternion.Euler(nowRot.x, nowRot.y, inputHundle * -30.0f);
-    transform.rotation = newRot;
+    //transform.rotation = newRot;
   }
 }
