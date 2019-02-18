@@ -7,6 +7,10 @@ public class AirPlaneMove : MonoBehaviour
   [SerializeField]
   private float speed;
 
+  [SerializeField]
+  private float kRoll;
+
+
 	// Use this for initialization
 	void Start () 
   {
@@ -49,5 +53,30 @@ public class AirPlaneMove : MonoBehaviour
     Vector3 nowRot = transform.rotation.eulerAngles;
     Quaternion newRot = Quaternion.Euler(nowRot.x, nowRot.y, inputHundle * -30.0f);
     //transform.rotation = newRot;
+
+    if (inputHundle == 0.0f)
+    {
+      /* 
+      if (transform.rotation.z > 0.1f)
+        transform.Rotate (Vector3.forward * kRoll);
+      else if (transform.rotation.z < -0.1f)
+        transform.Rotate (Vector3.forward * -kRoll);
+      else
+        transform.rotation = Quaternion.Euler (nowRot.x, nowRot.y, 0.0f);
+
+        */
+    }
+    else
+    {
+      if (transform.rotation.z < 45.0f && transform.rotation.z > -45.0f)
+        transform.Rotate (Vector3.forward * kRoll * inputHundle);
+      else
+      {
+        if (transform.rotation.z > 45.0f)
+          transform.rotation = Quaternion.Euler (nowRot.x, nowRot.y, 45.0f);
+        else if (transform.rotation.z < -45.0f)
+          transform.rotation = Quaternion.Euler (nowRot.x, nowRot.y, -45.0f);
+      }
+    }
   }
 }

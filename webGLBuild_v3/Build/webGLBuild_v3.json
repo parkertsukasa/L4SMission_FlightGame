@@ -1,0 +1,13 @@
+{
+"companyName": "Parker",
+"productName": "L4SMission_FlightGame",
+"dataUrl": "webGLBuild_v3.data.unityweb",
+"asmCodeUrl": "webGLBuild_v3.asm.code.unityweb",
+"asmMemoryUrl": "webGLBuild_v3.asm.memory.unityweb",
+"asmFrameworkUrl": "webGLBuild_v3.asm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20"
+}
